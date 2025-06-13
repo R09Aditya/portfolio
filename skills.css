@@ -1,0 +1,226 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow: hidden; /* Hide scrollbars */
+    height: 100vh; /* Full viewport height */
+    background-color: black; /* Dark background */
+    color: white; /* Light text color */
+    cursor: none;
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader img {
+    width: 300px;
+    height: 300px;
+}
+
+/* Custom Cursor */
+.cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255); /* White cursor */
+    mix-blend-mode: difference;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    background-color: black; /* Header background color */
+    padding: 0 10px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    cursor: none;
+}
+
+.formbtn {
+    margin: 0 10px;
+}
+
+.cs, .workw {
+    font: 16px Syne, Bahnschrift Condensed;
+    height: 40px;
+    width: 150px;
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: none;
+
+}
+
+.cs:hover, .workw:hover {
+    background-color: #555; /* Slightly lighter background on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Image Section */
+.images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: calc(100vh - 60px - 60px); /* Full viewport height minus header and footer */
+    padding: 10px;
+    overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+.imggg22, .imggg33 {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0;
+}
+
+.im1, .im2, .im3, .im4 {
+    width: calc(50% - 20px);
+    margin: 10px;
+    text-align: center;
+    background-color: #333; /* Darker background for image cards */
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 10px;
+    width: 400px;
+    height: 400px;
+    cursor: none;
+    font-size: 18px;
+}
+.im1, .im2, .im3, .im4 a{
+    cursor: none;
+}
+.imm1 {
+    width: 100%;
+    height: 310px;
+    object-fit: cover; /* Ensure image covers the area */
+}
+
+.st1, .stt {
+    margin: 10px;
+}
+
+.st1 {
+    font-size: 18px;
+    color: #ecf0f1; /* Light text color for titles */
+}
+
+.stt {
+    font-size: 14px;
+    color: #bdc3c7; /* Lighter gray for description text */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .cs, .workw {
+        font-size: 14px;
+        height: 35px;
+        width: 120px;
+    }
+
+    .im1, .im2, .im3, .im4 {
+        width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .cs, .workw {
+        font-size: 12px;
+        height: 30px;
+        width: 100px;
+    }
+
+    .im1, .im2, .im3, .im4 {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .st1, .stt {
+        font-size: 12px;
+    }
+}
+
+.main-container__marquee {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100vw;
+    max-width: 100%;
+    min-height: 2rem;
+    overflow-x: hidden;
+    font-family: "Merriweather", serif;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 1);
+    background-color: rgb(55, 55, 55);
+    margin: 30px 0 0;
+}
+
+.main-container__marquee-track {
+    display: flex;
+    gap: 20px;
+    white-space: nowrap;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+}
+
+.main-container__marquee-items {
+    flex-shrink: 0;
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+    min-width: 100%;
+    animation: marquee 20s linear infinite;
+    
+}
+
+.main-container__marquee-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    width: auto;
+    transition: all 0.1s ease-in-out;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}

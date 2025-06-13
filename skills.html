@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Skills</title>
+    <link rel="stylesheet" href="skills.css">
+    <script src="https://kit.fontawesome.com/08a1d1d5aa.js" crossorigin="anonymous"></script>
+</head>
+<body onload = "bigger()">
+
+    <div class="cursor"></div> <!-- Custom Cursor -->
+
+    <div class="loader" id="loader">
+        <img src="loader.gif" alt="Loading...">
+    </div>
+
+    <div class="header">
+        <form class="formbtn" action="Index.html"><button class="cs">Home</button></form>
+        <form class="formbtn" action="reach.php"><button class="workw">Reach me out!</button></form>
+    </div>
+
+    <div class="images">
+        <div class="imggg22">
+           
+                <div class="im1">
+                    <img class="imm1" src="projects/nrfbox.jpg" alt="">
+                    <h1 class="st1">nRFBox</h1>
+                    <h5 class="stt">Custom hardware to sniff and replay BLE signals.</h5>
+                </div>
+            
+            
+                <div class="im2">
+                    <img class="imm1" src="projects/phishing.jpg" alt="">
+                    <h1 class="st1">Phishing Page</h1>
+                    <h5 class="stt">Phishing page to demonstrate phishing awareness.</h5>
+                </div>
+            
+        </div>
+
+        
+            <div class="imggg33">
+                <div class="im3">
+                    <img class="imm1" src="projects/server.png" alt="">
+                    <h1 class="st1">Server Hosting</h1>
+                    <h5 class="stt">Deployed and managed Windows server.</h5>
+                </div>
+            
+                <div class="im4">
+                    <img class="imm1" src="projects/OSINTCon.jpg" alt="">
+                    <h1 class="st1">OSINTCon</h1>
+                    <h5 class="stt">Helped with sessions and participant support.</h5>
+                </div>
+        
+        </div>
+    </div>
+
+    <article class="main-container__marquee">
+        <div class="main-container__marquee-track">
+            <div class="main-container__marquee-items">
+                <span class="main-container__marquee-item">Ethical Hacker | Skilled Coder</span>
+                <span class="main-container__marquee-item">Persistent Researcher | Security Focused</span>
+                <span class="main-container__marquee-item">Strategic Planner | Quick Problem Solver</span>
+            </div>
+            <div aria-hidden="true" class="main-container__marquee-items">
+                <span class="main-container__marquee-item">Hands-on Learner | Tech-Driven Innovator</span>
+                <span class="main-container__marquee-item">Network Specialist | Code Enthusiast</span>
+                <span class="main-container__marquee-item">Curious Mind | Dedicated Red Teamer</span>
+            </div>
+        </div>
+    </article>
+
+
+    <script src="reach.js"></script>
+    <script>
+        function bigger()
+    {
+var foo = setInterval(function () {
+    document.getElementById('loader').style.display = 'none';
+    // document.getElementById('loader').style.height = 0 + 'px';
+}, 1000);
+    }
+    </script>
+</body>
+</html>

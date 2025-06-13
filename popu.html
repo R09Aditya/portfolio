@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Centered Certificate Viewer</title>
+  <style>
+    * {
+      background-color: black;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: unset;
+      cursor: none;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
+
+    .cursor {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      mix-blend-mode: difference;
+      background-color: rgb(255, 255, 255);
+      pointer-events: none;
+      z-index: 9999;
+    }
+
+    h1 {
+      color: white;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .button {
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    .top {
+      display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    }
+    .bottom {
+      display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    }
+
+    .cs {
+      font: 18px Syne, Bahnschrift Condensed;
+      height: 40px;
+      width: 140px;
+      color: white;
+      background-color: black;
+      border: 1px solid rgb(255, 255, 255);
+      margin: 5px 0;
+      cursor: none;
+    }
+
+    .cs:hover {
+      opacity: 0.6;
+    }
+
+    .popup-img {
+      position: fixed;
+      top: 450px;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.95);
+      width: 800px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease, transform 0.3s ease;
+      z-index: 20;
+    }
+
+    .popup-img.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    .popup-img img {
+      width: 100%;
+      border: 2px solid white;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      background: red;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 16px;
+      width: 30px;
+      height: 30px;
+      display: none;
+      cursor: none;
+      z-index: 25;
+    }
+
+    .popup-img.sticky .close-btn {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor"></div>
+
+  <h1>Hover or Click to View Certificates</h1>
+
+  <div class="button">
+    <div class="top">
+      <button class="cs" data-img="certificates/C.jpg">C</button>
+      <button class="cs" data-img="certificates/Jav.jpg">Java</button>
+      <button class="cs" data-img="certificates/Java.jpg">Advance Java</button>
+      <button class="cs" data-img="certificates/WebDes.jpg">Web Designing</button>
+      <button class="cs" data-img="certificates/WebDev.jpg">Web Development</button>
+    </div>
+    <div class="bottom">
+      <button class="cs" data-img="certificates/cyber.jpg">CyberSecurity</button>
+      <button class="cs" data-img="certificates/MServer.jpg">Microsoft Server</button>
+      <button class="cs" data-img="certificates/UServer.jpg">Ubuntu Server</button>
+    </div>
+  </div>
+
+  <!-- Central popup viewer -->
+  <div class="popup-img" id="popup">
+    <img id="popup-image" src="" alt="Certificate">
+    <button class="close-btn" id="closeBtn">×</button>
+  </div>
+
+  <script>
+    const buttons = document.querySelectorAll('.cs');
+    const popup = document.getElementById('popup');
+    const popupImg = document.getElementById('popup-image');
+    const closeBtn = document.getElementById('closeBtn');
+
+    let sticky = false;
+
+    buttons.forEach(btn => {
+      const imgSrc = btn.getAttribute('data-img');
+
+      btn.addEventListener('mouseover', () => {
+        if (!sticky) {
+          popupImg.src = imgSrc;
+          popup.classList.add('show');
+        }
+      });
+
+      btn.addEventListener('mouseout', () => {
+        if (!sticky) {
+          popup.classList.remove('show');
+        }
+      });
+
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        popupImg.src = imgSrc;
+        popup.classList.add('show', 'sticky');
+        sticky = true;
+      });
+    });
+
+    closeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      popup.classList.remove('show', 'sticky');
+      sticky = false;
+    });
+
+    // Click outside to remove sticky popup
+    document.addEventListener('click', () => {
+      if (sticky) {
+        popup.classList.remove('show', 'sticky');
+        sticky = false;
+      }
+    });
+
+     function bigger()
+    {
+var foo = setInterval(function () {
+    document.getElementById('loader').style.display = 'none';
+    // document.getElementById('loader').style.height = 0 + 'px';
+}, 1000);
+    }
+  </script>
+
+  <script src="reach.js"></script>
+
+</body>
+</html>

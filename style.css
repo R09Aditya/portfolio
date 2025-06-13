@@ -1,0 +1,197 @@
+* {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: unset;
+    cursor: none;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.cursor {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    mix-blend-mode: difference;
+    background-color: rgb(255, 255, 255);
+    pointer-events: none;
+    z-index: 9999;
+}
+
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader img {
+    width: 300px;
+    height: 300px;
+}
+
+/* Header */
+.head {
+    height: auto; /* Adjusted height for responsive design */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 10px 3%;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 200px;
+    width: 200px;
+    margin: 40 auto;
+    border-radius: 50%;
+}
+
+.button {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.cs, .workw {
+    font: 18px Syne, Bahnschrift Condensed;
+    height: 40px;
+    width: 140px;
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+    margin: 5px 0;
+}
+
+.cs:hover, .workw:hover {
+    opacity: 0.5;
+}
+
+/* Video Section */
+.large {
+    position: relative;
+    height: auto; /* Adjust height for responsive design */
+    width: 100%;
+}
+
+.vid {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensures video covers the section appropriately */
+}
+
+.texts {
+    position: absolute;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    padding: 0 10%;
+    background-color: rgba(240, 248, 255, 0);
+}
+
+.hh {
+    font: 70px Syne, Bahnschrift Condensed; /* Smaller font size for smaller screens */
+    margin: 0 auto;
+    background-color: rgba(240, 248, 255, 0);
+}
+
+.br {
+    font: 30px Syne, Bahnschrift Condensed; /* Smaller font size for smaller screens */
+    margin: 20px auto;
+    width: 100%;
+    /* border: 1px solid white; */
+    padding: 0 10px;
+    background-color: rgba(240, 248, 255, 0);
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .head {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .logo {
+        height: 200px;
+        width: 200px;
+    }
+    .large
+    {
+        height: 60vh; /* Adjusted height for smaller screens */
+    }
+    .button {
+        margin-top: 10px;
+    }
+
+    .cs, .workw {
+        font: 16px Syne, Bahnschrift Condensed;
+        height: 35px;
+        width: 120px;
+    }
+
+    .hh {
+        font: 36px Syne, Bahnschrift Condensed;
+    }
+
+    .br {
+        font: 18px Syne, Bahnschrift Condensed;
+    }
+
+    .contact-heading {
+        font: 24px Syne, Bahnschrift Condensed;
+    }
+
+    .contact-form input, .contact-form textarea {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo{
+        height: 200px;
+        width: 200px;
+    }
+    .hh {
+        font: 28px Syne, Bahnschrift Condensed;
+    }
+
+    .br {
+        font: 16px Syne, Bahnschrift Condensed;
+    }
+
+    .contact-heading {
+        font: 20px Syne, Bahnschrift Condensed;
+    }
+
+    .contact-form input, .contact-form textarea {
+        width: 100%;
+    }
+
+    .contact-form button {
+        font: 16px Syne, Bahnschrift Condensed;
+        padding: 8px 16px;
+    }
+
+    .social-icon {
+        font-size: 24px;
+    }
+
+    .copy {
+        font: 16px Syne, Bahnschrift Condensed;
+    }
+}
