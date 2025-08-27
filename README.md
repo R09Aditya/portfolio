@@ -24,7 +24,7 @@ The website features a clean, user-friendly interface with the following section
 
 ## 🖼️ Screenshots
 
-![Techfolio Homepage](https://github.com/R09Aditya/portfolio/raw/main/screenshot.png)
+![Techfolio Homepage](https://github.com/R09Aditya/portfolio/blob/812cc7b25d7ad1a101dbc6e3b5fae9a8b5334341/raw/main/Screenshot.png)
 
 *A glimpse of the homepage showcasing the sleek design and layout.*
 
